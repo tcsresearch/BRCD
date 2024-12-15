@@ -1,0 +1,7 @@
+# Define Location of FLIPTool
+Location_FLIPTool="/etc/BLING/FLIPTool/flip-top10.bfunc"
+
+# Load function if it exists
+if [ -f $Location_FLIPTool ]; then
+    . $Location_FLIPTool
+fi
