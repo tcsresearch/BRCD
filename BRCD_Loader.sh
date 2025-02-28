@@ -19,7 +19,7 @@ Program="$1"
 ## [ $# -eq 0 ] && cecho blue "Usage: $0 filename"
 
 if [ -z "$1" ]; then
-  echo "Usage: $0 [filename] "
+  echo "Usage: $1 [filename] "
 else
 	RunBRCD_Loader
 fi
