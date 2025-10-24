@@ -1,5 +1,7 @@
+#!/bin/bash
+
 ## The following line is a default parameter; disabled for replacement with a custom implementation.
-### PS1='[\h]$ '
+### export PS1='[\h]$ '
 
 ## TODO ##
 ## Can we set different profiles for different bash prompts?
@@ -13,33 +15,38 @@
 
 ## More TODO ##
 # Use -z and enable $1 parameter or CASE
-
+# FIXME: Functions do not work!  Must copy/paste PS1 code into BASH.
+#        Likely Solution: Use the export command AND source trhis file.
+#        		  Use the CASE statement.
+#
+#
 ##### PS1 Profiles #####
 ## PS1 - Default ##
 function PS1_Default() {
-  PS1='[\h]$ '
+	export PS1='[\h]$ '
 }
 
 ## Custom PS1 Implementation - Basic
 function PS1_Custom-Basic() {
   ## PS1_CUSTOM_BASIC='$(whoami)@$(hostname):$(pwd)$'
-  PS1='$(whoami)@$(hostname):$(pwd)$'
+	export PS1='$(whoami)@$(hostname):$(pwd)$'
 }
 
 ## Custom PS1 - MoreInfo
 function PS1_Custom-MoreInfo() {
-  PS1="\n\[\033[35m\]\$(/bin/date)\n\[\033[32m\]\w\n\[\033[1;31m\]\u@\h: \[\033[1;34m\]\$(/usr/bin/tty | /bin/sed -e 's:/dev/::'): \[\033[1;36m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files \[\033[1;33m\]\$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\033[0m\] -> \[\033[0m\]"
+	export PS1="\n\[\033[35m\]\$(/bin/date)\n\[\033[32m\]\w\n\[\033[1;31m\]\u@\h: \[\033[1;34m\]\$(/usr/bin/tty | /bin/sed -e 's:/dev/::'): \[\033[1;36m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files \[\033[1;33m\]\$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\033[0m\] -> \[\033[0m\]"
 }
 
 ## Old Default PS1 Until Jan 2025 ##
 function PS1_Custom-OldDefault() {
-PS1="\n\[\033[35m\]\$(/bin/date)\n\[\033[32m\]\w\n\[\033[1;31m\]\u@\h: \[\033[1;34m\]\$(/usr/bin/tty | /bin/sed -e 's:/dev/::'): \[\033[1;36m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files \[\033[1;33m\]\$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\033[0m\] -> \[\033[0m\]"
+	export PS1="\n\[\033[35m\]\$(/bin/date)\n\[\033[32m\]\w\n\[\033[1;31m\]\u@\h: \[\033[1;34m\]\$(/usr/bin/tty | /bin/sed -e 's:/dev/::'): \[\033[1;36m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files \[\033[1;33m\]\$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\033[0m\] -> \[\033[0m\]"
 }
 
 ## New Custom PS1 - Jan 2025 ##
 function PS1_Custom-NewDefault() {
-  PS1='\n\[\033[1;31m\]\u@\h: \[\033[1;34m\] -> \[\033[0;32m\]'
+	export PS1='\n\[\033[1;31m\]\u@\h: \[\033[1;34m\] -> \[\033[0;32m\]'
 }
+
 
 ## Assign profile as function to enable here ##
 # Enable ONLY ONE of the following lines below!!

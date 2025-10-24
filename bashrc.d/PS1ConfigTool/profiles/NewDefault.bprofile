@@ -1,0 +1,5 @@
+function PS1Select_NewDefault() {
+        PS1="\n\[\033[1;31m\]\u@\h: \[\033[1;34m\] -> \[\033[0;32m\] "
+        echo "BASH Profile Selected: NewDefault "
+}
+

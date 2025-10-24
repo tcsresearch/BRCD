@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## The following line is a default parameter; disabled for replacement with a custom implementation.
 ### PS1='[\h]$ '
 
