@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Last Updated: Sat Nov 15, 2025
+#
 ## BEGIN Custom Aliases - Base ##
 alias ll='ls -hl --color=auto'
 alias rm='rm -i'
@@ -20,5 +23,7 @@ alias rmi='rm -i'
 alias cpi='cp -i'
 alias mvi='mv -i'
 #
+# Other 
+alias sensors='sensors -f'
 #
 ## END Custom Aliases ##
