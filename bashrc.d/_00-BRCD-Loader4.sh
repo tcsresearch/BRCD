@@ -33,8 +33,9 @@ for file in "${files_to_check[@]}"; do
 done
 
 # Change BASH Prompt via PS1ConfigTool
+### Do not use.  PS1ConfigTool not sourced here.
 echo "Changing BASH Prompt..."
-PS1Select_OldDefault
+## PS1Select_OldDefault
 
 
 
