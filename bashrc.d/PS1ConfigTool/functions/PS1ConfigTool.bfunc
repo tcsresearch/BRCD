@@ -1,0 +1,41 @@
+############################################################################################################
+# Define Functions #
+####################
+
+function DisplayBanner() {
+        echo "BASH Prompt Configuration Utility - Version $PS1ProgVersion"
+        echo "(c) 2025 TCS Research.  All Rights Reserved."
+        echo " "
+#       echo " WARNING: Prompts do NOT change with this tool (yet!)."
+#       echo " Fix and Retest."
+#       echo "Call the function to activte for now."
+#       echo " "
+}
+
+
+function zTest() {
+        if [ -z "$1" ]
+        then
+         echo "ERROR: -z Failed!"
+        fi
+}
+
+function Usage() {
+        echo "Please Select a BASH prompt preset to use."
+        echo "You can select by running $0 [PRESET], where [PRESET] is one of the following: "
+        echo "Default | Basic | MoreInfo | OldDefault | NewDefault "
+        echo " "
+}
+
+
+function Usage_TempFix() {
+                echo "Please select a BASH prompt to use with one of the following: "
+                echo "  PS1Select_Default"
+                echo "  PS1Select_Basic"
+                echo "  PS1Select_MoreInfo"
+                echo "  PS1Select_OldDefault"
+                echo "  PS1Select_NewDefault"
+                echo " "
+}
+
+

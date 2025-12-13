@@ -1,0 +1,36 @@
+
+
+## Define functions for CASE used in PS1ConfigTool-CaseSelect.bfunc. 
+
+
+
+function PS1Select_Default() {
+	PS1="[\h]$ " 
+	echo "BASH Prompt Selected: Default " 
+}
+
+
+function PS1Select_Basic() {
+	PS1="$(whoami)@$(hostname):$(pwd)$ " 
+	echo "BASH Prompt Selected: Basic " 
+}
+
+
+function PS1Select_MoreInfo() {	
+	PS1="\n\[\033[35m\]\$(/bin/date)\n\[\033[32m\]\w\n\[\033[1;31m\]\u@\h: \[\033[1;34m\]\$(/usr/bin/tty | /bin/sed -e 's:/dev/::'): \[\033[1;36m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files \[\033[1;33m\]\$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\033[0m\] -> \[\033[0m\] " 
+	echo "BASH Profile Selected: MoreInfo " 
+}
+
+
+function PS1Select_OldDefault() {
+	PS1="\n\[\033[35m\]\$(/bin/date)\n\[\033[32m\]\w\n\[\033[1;31m\]\u@\h: \[\033[1;34m\]\$(/usr/bin/tty | /bin/sed -e 's:/dev/::'): \[\033[1;36m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files \[\033[1;33m\]\$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\033[0m\] -> \[\033[0m\] " 
+	echo "BASH Profile Selected: OldDefault " 
+}
+
+function PS1Select_NewDefault() {
+	PS1="\n\[\033[1;31m\]\u@\h: \[\033[1;34m\] -> \[\033[0;32m\] " 
+	echo "BASH Profile Selected: NewDefault " 
+}
+
+
+

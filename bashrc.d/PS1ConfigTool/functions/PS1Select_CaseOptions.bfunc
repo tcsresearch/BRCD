@@ -1,0 +1,41 @@
+
+## Define Case Statement Options ###
+
+function DefineCaseOptions() {
+case $1 in 
+
+
+	Default)	PS1Select_Default 
+			echo "BASH Prompt Selected: Default " 
+			;;
+
+
+	Basic)		PS1Select_Basic 
+			echo "BASH Prompt Selected: Basic " 
+			;;
+	
+	MoreInfo)	PS1Select_MoreInfo 
+			echo "BASH Profile Selected: MoreInfo " 
+			;;
+
+	OldDefault) 	PS1Select_OldDefault 
+			echo "BASH Profile Selected: OldDefault " 
+			;;
+
+	NewDefault)	PS1Select_NewDefault 
+			echo "BASH Profile Selected: NewDefault " 
+			;;
+
+
+# DISABLED
+# 	*) echo "ERROR: Uknknown Option." >&2 ;;
+
+## DISABLED Until Fix is Found: 
+# 	*) Usage >&2 ;;
+
+	*) Usage_TempFix >&2 ;;
+
+esac
+
+}
+
