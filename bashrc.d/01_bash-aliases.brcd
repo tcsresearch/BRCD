@@ -21,4 +21,10 @@ alias cpi='cp -i'
 alias mvi='mv -i'
 #
 #
+# NEW Jan 2026 #
+
+# Composer alias #
+# This is good for DreamHost and Snipe-IT Helpdesk WebApp and others
+alias composer='php composer.phar'
+
 ## END Custom Aliases ##
