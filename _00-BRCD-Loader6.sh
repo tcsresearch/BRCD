@@ -1,19 +1,21 @@
 #!/bin/bash
 
-# BRCD-Loader v5
+# BRCD-Loader v6
 
 ### NOTE: As of BRCD-Loader v5, PS1ConfigTool is now a seperate program to be called by BRCD-Loader via AdvPreLoader.sh.
 
-## --- TODO For v5 --- ##
+## --- TODO For v6 --- ##
 # - Enable Cecho [ TESTABLE ]
 # - Setup Colorized Status Messages via ColorStatus. [ Needs Development ]
+# - Use Correct PreLoader
+# - Use EchoCmd.conf to control output
 
 
 # Define what EchoCmd command does.
-EchoCmd="echo" # This can be changed to Cecho inside the script if needed.
+EchoCmd="echo" # This can be 'echo', 'cecho', 'fprint', or 'fprint \n'.  
 
 # Configure whether to run PS1ConfigTool From Here.
-RunPS1ConfigTool="0"
+RunPS1ConfigTool="0" # Needs Code To Use!
 
 
 ####################################################################################################
@@ -22,7 +24,7 @@ RunPS1ConfigTool="0"
 
 # ----- Folder Paths ----- #
 BRCDPath="/etc/bashrc.d"
-CechoPath="/etc/BLING/functions"
+BLINGPath="/etc/BLING/functions"
 
 # ----- File Names ----- #
 Cecho_FileName="Cecho.bfunc"
@@ -36,11 +38,11 @@ Cecho_FileName="Cecho.bfunc"
 function LoadCecho() {
 # Load Cecho w/ Sanity Check
 ## TODO: Switch to new function in BLING with Cecho Sanity Checker and Cecho_Alias.
-	if [ ! -f "$CechoPath/$Cecho_FileName" ]; then
-	  echo "ERROR: $CechoPath/$Cecho_FileName Not Found!"
+	if [ ! -f "$BLINGPath/$Cecho_FileName" ]; then
+	  echo "ERROR: $BLINGPath/$Cecho_FileName Not Found!"
 	  break
   	else
-	  source $CechoPath/$Cecho_FileName
+	  source $BLINGPath/$Cecho_FileName
 	  cecho blue "Cecho Enabled."
 	  alias echo="cecho" # Make 'echo' use 'cecho'
 	fi
@@ -51,6 +53,7 @@ function LoadCecho() {
 
 function DefineFileArray() {
 # Define an array of files to check
+### TODO v6: Change to work with PreLoader and correct filenames inside functions folder.
 ## TODO: Populate array based on a config file: PS1ConfigTool.conf.
 	Files_to_check=(
 		"FilePath/01_bash-aliases.brcd"
@@ -81,6 +84,7 @@ done
 
 
 # ----- Export Hack ----- #
+## TODO: Move code for these two functions into BLING / Call from there.
 
 function EnableExportHack() {
 ##### Set Export Hack #####
@@ -96,6 +100,7 @@ function DisableExportHack() {
 
 
 # ----- Manual Source ----- #
+# TODO: Determine if we truly need this and remove once no longer needed.
 
 function ManualSource() {
 	source ./01_bash-aliases.brcd
@@ -122,6 +127,8 @@ function ManualSource() {
 
 function PerformPromptChange() {
 # Change BASH Prompt via PS1ConfigTool
+## TODO: Use config option; Run if enabled.
+## TODO: Source code in order to use.
 # TODO: Enable Profile Selection Via CASE Statement.
 	echo "Changing BASH Prompt..."
 	PS1Select_OldDefault
@@ -144,7 +151,7 @@ LoadFileArray
 DisableExportHack
 
 
-## Loader Fix ##
+## Loader Fix ##    # TODO: Why do we need this?
 cd /etc/bashrc.d
 sh AdvPreLoader.sh
 cd -
