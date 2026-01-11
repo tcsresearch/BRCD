@@ -12,8 +12,8 @@
 CONFIG_DIR="$(pwd)/config"
 
 # CONFIG_FILE="test.ini"
-#  CONFIG_FILE="config.ini"
-  CONFIG_FILE="BRCD_LOader.conf"
+# CONFIG_FILE="config.ini"
+  CONFIG_FILE="BRCD_Loader.conf"
 
 FUNC_DIR="$(pwd)/functions"
 FUNC_FILE="lib_ini.bfunc"
