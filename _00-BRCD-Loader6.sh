@@ -87,18 +87,9 @@ done
 
 
 # ----- Export Hack ----- #
-## TODO: Code exists in BLING/ExportHacks.bfunc / Call from there and remove here.
+## TODO: [TESTING] Code exists in BLING/ExportHacks.bfunc / Call from there and remove here.
 
-function EnableExportHack() {
-##### Set Export Hack #####
-	set -a  # Enable automatic exporting of all subsequent variable assignments
-}
-
-function DisableExportHack() {
-##### Unset Export Hack #####
-	set +a  # Disble automatic exporting of all subsequent variable assignments
-}
-
+source_files_if_exist $BLINGPath/ExportHacks.bfunc
 
 
 
@@ -140,6 +131,7 @@ function PerformPromptChange() {
 
 
 # Revert Cecho Alias
+## TODO: Call from BLING instead.
 alias echo="echo"
 
 ####################################################################################################
