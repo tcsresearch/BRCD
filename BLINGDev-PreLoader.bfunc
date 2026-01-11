@@ -1,0 +1,45 @@
+## This BLING function will assist with loading *.conf files under config/, and also *.bfunc files under functions
+
+function Define_PreLoader_Dirs() {
+  # Define the directories
+  CONFIG_DIR="config"
+  FUNCTIONS_DIR="functions"
+}
+
+function PreLoad_Configs() {
+# Source all *.conf files in the config directory
+  if [ -d "$CONFIG_DIR" ]; then
+    echo "Sourcing configuration files from $CONFIG_DIR..."
+    for conf_file in "$CONFIG_DIR"/*.conf; do
+      if [ -f "$conf_file" ]; then
+        echo "  Sourcing $conf_file"
+        source "$conf_file"
+      fi
+    done
+  else
+    echo "Configuration directory '$CONFIG_DIR' not found."
+  fi
+}
+
+function PreLoad_Functions() {
+# Source all *.bfunc files in the functions directory
+  if [ -d "$FUNCTIONS_DIR" ]; then
+    echo "Sourcing function files from $FUNCTIONS_DIR..."
+    for func_file in "$FUNCTIONS_DIR"/*.bfunc; do
+      if [ -f "$func_file" ]; then
+        echo "  Sourcing $func_file"
+        source "$func_file"
+      fi
+    done
+  else
+    echo "Functions directory '$FUNCTIONS_DIR' not found."
+  fi
+}
+
+####################################################################################################################################
+
+function BLING_PreLoader() {
+  Define_PreLoader_Dirs
+  PreLoad_Configs
+  PreLoad_Functions
+}
