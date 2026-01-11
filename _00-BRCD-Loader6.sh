@@ -7,15 +7,8 @@
 ## --- TODO For v6 --- ##
 # - Enable Cecho [ TESTABLE ]
 # - Setup Colorized Status Messages via ColorStatus. [ Needs Development ]
-# - Use Correct PreLoader
-# - Use EchoCmd.conf to control output
-
-
-# Define what EchoCmd command does.
-EchoCmd="echo" # This can be 'echo', 'cecho', 'fprint', or 'fprint \n'.  
-
-# Configure whether to run PS1ConfigTool From Here.
-RunPS1ConfigTool="0" # Needs Code To Use!
+# - Use AdvPreLoader.sh [ File Exists / Needs Code ]
+# - Use EchoCmd.conf to control output [ File Exists / Needs Code ]
 
 
 ####################################################################################################
