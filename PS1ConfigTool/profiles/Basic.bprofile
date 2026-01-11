@@ -1,0 +1,5 @@
+function PS1Select_Basic() {
+        PS1="$(whoami)@$(hostname):$(pwd)$ "
+        echo "BASH Prompt Selected: Basic "
+}
+

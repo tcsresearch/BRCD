@@ -1,0 +1,5 @@
+function PS1Select_Default() {
+        PS1="[\h]$ "
+        echo "BASH Prompt Selected: Default "
+}
+
