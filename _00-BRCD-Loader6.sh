@@ -25,6 +25,7 @@ RunPS1ConfigTool="0" # Needs Code To Use!
 # ----- Folder Paths ----- #
 BRCDPath="/etc/bashrc.d"
 BLINGPath="/etc/BLING/functions"
+PS1ConfigToolPath="/etc/PS1ConfigTool" # New For v6
 
 # ----- File Names ----- #
 Cecho_FileName="Cecho.bfunc"
@@ -69,6 +70,8 @@ function DefineFileArray() {
 
 
 function LoadFileArray() {
+## TODO: Move code to BLING and call from there.
+
 # Loop through each file in the array
 for file in "${files_to_check[@]}"; do
     # Check if the file exists and is a regular file
@@ -84,7 +87,7 @@ done
 
 
 # ----- Export Hack ----- #
-## TODO: Move code for these two functions into BLING / Call from there.
+## TODO: Code exists in BLING/ExportHacks.bfunc / Call from there and remove here.
 
 function EnableExportHack() {
 ##### Set Export Hack #####
