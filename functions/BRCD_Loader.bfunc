@@ -39,13 +39,13 @@ function DefineFileArray() {
 ## TODO: Populate array based on a config file: PS1ConfigTool.conf.
 	Files_to_check=(
 		"FilePath/01_bash-aliases.brcd"
-    		# "$BRCDPath/05_New-Custom-bash-prompt4.brcd"
-    		"$BRCDPath/10_cecho.brcd"
-    		# $BRCDPath/PS1ConfigTool/functions/PS1ConfigTool.bfunc"
-    		"$BRCDPath/20_BLING_Loader.brcd"
-    		"$BRCDPath/80_powerline.brcd"
-    		"$BRCDPath/90_fastfetch.brcd"
-    		"$BRCDPath/97_tmux.brcd"
+    	# "$BRCDPath/05_New-Custom-bash-prompt4.brcd"
+    	"$BRCDPath/10_cecho.brcd"
+    	# $BRCDPath/PS1ConfigTool/functions/PS1ConfigTool.bfunc"
+    	"$BRCDPath/20_BLING_Loader.brcd"
+    	"$BRCDPath/80_powerline.brcd"
+    	"$BRCDPath/90_fastfetch.brcd"
+    	"$BRCDPath/97_tmux.brcd"
 	) # Close Array.
 }
 
