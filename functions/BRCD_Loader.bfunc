@@ -67,13 +67,5 @@ done
 }
 
 
-# ----- Export Hack ----- #
-## TODO: [TESTING] Code exists in BLING/ExportHacks.bfunc / Call from there and remove here.
-
-source_files_if_exist $BLINGPath/ExportHacks.bfunc
-
-
-
-}
 
 
