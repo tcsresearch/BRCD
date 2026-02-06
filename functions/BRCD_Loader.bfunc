@@ -21,7 +21,7 @@ function LoadCecho() {
 # Load Cecho w/ Sanity Check
 ## TODO: Switch to new function in BLING with Cecho Sanity Checker and Cecho_Alias.
 	if [ ! -f "$BLINGPath/$Cecho_FileName" ]; then
-	  echo "ERROR: $BLINGPath/$Cecho_FileName Not Found!"
+	  cecho red "ERROR: $BLINGPath/$Cecho_FileName Not Found!"
 	  break
   	else
 	  source $BLINGPath/$Cecho_FileName
@@ -57,11 +57,11 @@ function LoadFileArray() {
 for file in "${files_to_check[@]}"; do
     # Check if the file exists and is a regular file
     if [ -f "$file" ]; then
-       cecho "Sourcing File: $file"
+       cecho blue "Sourcing File: $file"
        # Optional: Source the file if it's a configuration or script
        source "$file"
     else
-       cecho "ERROR: File does NOT exist: $file"
+       cecho red "ERROR: File does NOT exist: $file"
     fi
 done
 }
