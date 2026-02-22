@@ -17,7 +17,10 @@ _00-BRCD-Loader6.sh is still under active development and is NOT ready for testi
  <h4>Update 02/21/2026</h4>
  <ul>
   <li>
-    Run-BRCD.sh Added [ Need to integrate with _00-BRCD-Loader6.sh ]
+    Run-BRCD.sh Added [ To be removed after Run-BRCD.bfunc is integrated ]
+  </li>
+  <li>
+   Add Run-BRCD.bfunc - [ Need to integrate with _00-BRCD-Loader6.sh ]
   </li>
  </ul>
  </p>
