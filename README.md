@@ -12,3 +12,12 @@ As of Jan 11, 2026, this code has been tested on Fedora and appears to be workin
 <p>
 _00-BRCD-Loader6.sh is still under active development and is NOT ready for testing or use yet.
 </p>
+<hr>
+<p>
+ <h4>Update 02/21/2026</h4>
+ <ul>
+  <li>
+    Run-BRCD.sh Added [ Need to integrate with _00-BRCD-Loader6.sh ]
+  </li>
+ </ul>
+ </p>
