@@ -2,7 +2,7 @@
 
 # BRCD-Loader v6
 
-### NOTE: As of BRCD-Loader v5, PS1ConfigTool is now a seperate program to be called by BRCD-Loader via AdvPreLoader.sh.
+### NOTE: As of BRCD-Loader v5, PS1ConfigTool is now a separate program to be called by BRCD-Loader via AdvPreLoader.sh.
 
 ## --- TODO For v6 --- ##
 # - Enable Cecho [ TESTABLE ]
