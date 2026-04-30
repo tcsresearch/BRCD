@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # As of Jan 11, 2026, this is the latest and greatest version of ViewINI.sh
 # TODO: Finalize and save as function for BLING
 
