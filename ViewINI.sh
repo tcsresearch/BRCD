@@ -37,25 +37,46 @@ function SourceColorConfig() {
 function DefineColors() {
 # Define Our Colors
 # Define color variables
-  export black="$(tput setaf 0)"
-  export red="$(tput setaf 1)"
-  export green="$(tput setaf 2)"
-  export yellowbrown="$(tput setaf 3)"
-  export blue="$(tput setaf 4)"
-  export magenta="$(tput setaf 5)"
-  export cyan="$(tput setaf 6)"
-  export whitelightgray="$(tput setaf 7)"
-  export whitelightgrey="$(tput setaf 7)"
-  export brightblack_darkgray="$(tput setaf 8)"
-  export brightblack_darkgrey="$(tput setaf 8)"
-  export brightred="$(tput setaf 9)"
-  export brightgreen="$(tput setaf 10)"
-  export brightyellow="$(tput setaf 11)"
-  export brightblue="$(tput setaf 12)"
-  export brightmagenta="$(tput setaf 13)"
-  export brightcyan="$(tput setaf 14)"
-  export brightwhite="$(tput setaf 15)"
-  export reset="$(tput sgr0)" # Reset to default 
+  black="$(tput setaf 0)"
+  red="$(tput setaf 1)"
+  green="$(tput setaf 2)"
+  yellowbrown="$(tput setaf 3)"
+  blue="$(tput setaf 4)"
+  magenta="$(tput setaf 5)"
+  cyan="$(tput setaf 6)"
+  whitelightgray="$(tput setaf 7)"
+  whitelightgrey="$(tput setaf 7)"
+  brightblack_darkgray="$(tput setaf 8)"
+  brightblack_darkgrey="$(tput setaf 8)"
+  brightred="$(tput setaf 9)"
+  brightgreen="$(tput setaf 10)"
+  brightyellow="$(tput setaf 11)"
+  brightblue="$(tput setaf 12)"
+  brightmagenta="$(tput setaf 13)"
+  brightcyan="$(tput setaf 14)"
+  brightwhite="$(tput setaf 15)"
+  reset="$(tput sgr0)" # Reset to default 
+
+# Export Color Variables
+  export black
+  export red
+  export green
+  export yellowbrown
+  export blue
+  export magenta
+  export cyan
+  export whitelightgray
+  export whitelightgrey
+  export brightblack_darkgray
+  export brightblack_darkgrey  
+  export brightred
+  export brightgreen
+  export brightyellow
+  export brightblue
+  export brightmagenta
+  export brightcyan
+  export brightwhite
+  export reset 
 }
 
 
