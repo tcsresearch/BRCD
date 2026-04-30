@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # BRCD-Loader v6
 
@@ -17,7 +17,7 @@
 ####################################################################################################
 
 # Switch to BRCD folder
-cd /etc/bashrc.d
+cd /etc/bashrc.d || return 1
 
 # Launch PreLoader
 sh AdvPreLoader.sh
@@ -33,4 +33,4 @@ LoadFileArray
 DisableExportHack
 
 # Revert to root folder once completed.
-cd -
+cd ... || return 1
