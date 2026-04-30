@@ -18,3 +18,5 @@ jobs:
         with: 
           ignore_paths:
             _Old
+        env:
+          SHELLCHECK_OPTS: external-sources=true
