@@ -38,9 +38,9 @@ function LoadCecho() {
 ## TODO: Switch to new function in BLING with Cecho Sanity Checker and Cecho_Alias.
 	if [ ! -f "$CechoPath/$Cecho_FileName" ]; then
 	  echo "ERROR: $CechoPath/$Cecho_FileName Not Found!"
-	  break
+	  return
   	else
-	  source $CechoPath/$Cecho_FileName
+	  source "$CechoPath/$Cecho_FileName"
 	  cecho blue "Cecho Enabled."
 	  alias echo="cecho" # Make 'echo' use 'cecho'
 	fi
@@ -98,23 +98,23 @@ function DisableExportHack() {
 # ----- Manual Source ----- #
 
 function ManualSource() {
-	source ./01_bash-aliases.brcd
+	source "./01_bash-aliases.brcd"
 
 	# source ./05_New-Custom-bash-prompt4.brcd
 
-	source ./10_cecho.brcd
+	source "./10_cecho.brcd"
 
 	# PS1ConfigTool Not Finished Yet - Workaround
 #	source ./PS1ConfigTool/functions/PS1ConfigTool.bfunc
 #	PS1Select_OldDefault
 
-	source ./20_BLING_Loader.brcd
+	source "./20_BLING_Loader.brcd"
 
 	# source ./80_powerline.brcd.sh
 
-	source ./90_fastfetch.brcd
+	source "./90_fastfetch.brcd"
 
-	source ./97_tmux.brcd
+	source "./97_tmux.brcd"
 }
 
 
