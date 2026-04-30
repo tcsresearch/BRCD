@@ -25,8 +25,8 @@ ShowINI_Right="${brightwhite} $value ${reset}"
 
 # Source our Color Config
 function SourceColorConfig() {
-	if [ -f $CONFIG_DIR/$COLORS_FILE ]; then
-		source $CONFIG_DIR/$COLORS_FILE
+	if [ -f "$CONFIG_DIR/$COLORS_FILE" ]; then
+		source "$CONFIG_DIR/$COLORS_FILE"
 	else
 		echo "ERROR: $CONFIG_DIR/$COLORS_FILE Not Found!"
 	fi
@@ -37,25 +37,25 @@ function SourceColorConfig() {
 function DefineColors() {
 # Define Our Colors
 # Define color variables
-  black=$(tput setaf 0)
-  red=$(tput setaf 1)
-  green=$(tput setaf 2)
-  yellowbrown=$(tput setaf 3)
-  blue=$(tput setaf 4)
-  magenta=$(tput setaf 5)
-  cyan=$(tput setaf 6)
-  whitelightgray=$(tput setaf 7)
-  whitelightgrey=$(tput setaf 7)
-  brightblack_darkgray=$(tput setaf 8)
-  brightblack_darkgrey=$(tput setaf 8)
-  brightred=$(tput setaf 9)
-  brightgreen=$(tput setaf 10)
-  brightyellow=$(tput setaf 11)
-  brightblue=$(tput setaf 12)
-  brightmagenta=$(tput setaf 13)
-  brightcyan=$(tput setaf 14)
-  brightwhite=$(tput setaf 15)
-  reset=$(tput sgr0) # Reset to default 
+  black="$(tput setaf 0)"
+  red="$(tput setaf 1)"
+  green="$(tput setaf 2)"
+  yellowbrown="$(tput setaf 3)"
+  blue="$(tput setaf 4)"
+  magenta="$(tput setaf 5)"
+  cyan="$(tput setaf 6)"
+  whitelightgray="$(tput setaf 7)"
+  whitelightgrey="$(tput setaf 7)"
+  brightblack_darkgray="$(tput setaf 8)"
+  brightblack_darkgrey="$(tput setaf 8)"
+  brightred="$(tput setaf 9)"
+  brightgreen="$(tput setaf 10)"
+  brightyellow="$(tput setaf 11)"
+  brightblue="$(tput setaf 12)"
+  brightmagenta="$(tput setaf 13)"
+  brightcyan="$(tput setaf 14)"
+  brightwhite="$(tput setaf 15)"
+  reset="$(tput sgr0)" # Reset to default 
 }
 
 
@@ -92,7 +92,7 @@ print_INI() {
 }
 
 # Source our INI Library
-source $FUNC_DIR/$FUNC_FILE
+source "$FUNC_DIR/$FUNC_FILE"
 
 
 # Show name of config file.
