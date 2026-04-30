@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Run-BRCD.sh - runs all files in .bashrc.d
 # Taken From: https://stackoverflow.com/questions/41079143/run-all-shell-scripts-in-folder
 
