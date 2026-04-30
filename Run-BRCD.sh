@@ -61,10 +61,11 @@ done
 cecho "Running BRCD..."
   # Enter_BRCD() # DO NOT USE until code updated!
   
-RunBRCD-Base()
-## Test These
-# RunBRCD-StopOnFail()
-# RunBRCD-PreserveExitCode()
-# RunBRCD-Full
-## Exit_BRCD()
-cecho "BRCD Loaded."
+function RunBRCD-Base() {
+  ## Test These
+  # RunBRCD-StopOnFail()
+  # RunBRCD-PreserveExitCode()
+  # RunBRCD-Full
+  ## Exit_BRCD()
+  cecho "BRCD Loaded."
+}
