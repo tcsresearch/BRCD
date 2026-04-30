@@ -12,12 +12,12 @@ BRCD_Folder='.bashrc.d'
 
 function Enter_BRCD {
   cecho "Entering $BRCD_Folder..."
-  cd $BRCD_Folder
+  cd "$BRCD_Folder" || return 1
   }
 
 function Exit_BRCD {
   cecho "Exiting $BRCD_Folder..."
-  cd -
+  cd ... || return 1
   }
 
 ### TODO: Update code to use $BRCD_Folder  
