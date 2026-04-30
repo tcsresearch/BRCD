@@ -116,12 +116,12 @@ echo " "
 
 ini_list_sections "$CONFIG_DIR/$CONFIG_FILE" | while read -r section; do
        echo "${brightblue} [$section] ${reset}"
-		done
+		# done
 		
 ini_list_keys "$CONFIG_DIR/$CONFIG_FILE" "$section" | while read -r key; do
        value=$(ini_read "$CONFIG_DIR/$CONFIG_FILE" "$section" "$key")
        echo "  - ${brightyellow} $key ${brightred} = ${brightwhite} $value ${reset}"
-	   done
+	   # done
 
 
 # Display Output #
