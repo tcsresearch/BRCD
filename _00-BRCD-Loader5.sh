@@ -145,8 +145,9 @@ DisableExportHack
 
 
 ## Loader Fix ##
-cd /etc/bashrc.d
-sh AdvPreLoader.sh
-cd -
+cd /etc/bashrc.d || return 1
+sh AdvPreLoader.sh 
+cd ... || return
+
 
 
