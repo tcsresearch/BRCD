@@ -63,6 +63,7 @@ cecho "Running BRCD..."
   
 function RunBRCD-Base() {
   ## Test These
+  # RunBRCD-Base 
   # RunBRCD-StopOnFail()
   # RunBRCD-PreserveExitCode()
   # RunBRCD-Full
