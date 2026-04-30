@@ -104,15 +104,24 @@ echo "${brightyellow}Available sections: ${reset}"
 echo "${brightyellow}-------------------${reset}"
 echo " "
 
+## PENDING_DELETE: If code fix below works, remove the code below.
+	# ini_list_sections "$CONFIG_DIR/$CONFIG_FILE" | while read section; do
+    #   echo "${brightblue} [$section] ${reset}"
 
-ini_list_sections "$CONFIG_DIR/$CONFIG_FILE" | while read section; do
+	# ini_list_keys "$CONFIG_DIR/$CONFIG_FILE" "$section" | while read key; do
+    #   value=$(ini_read "$CONFIG_DIR/$CONFIG_FILE" "$section" "$key")
+    #   echo "  - ${brightyellow} $key ${brightred} = ${brightwhite} $value ${reset}"
+
+
+
+ini_list_sections "$CONFIG_DIR/$CONFIG_FILE" | while read -r section; do
        echo "${brightblue} [$section] ${reset}"
-
-ini_list_keys "$CONFIG_DIR/$CONFIG_FILE" "$section" | while read key; do
+		done
+		
+ini_list_keys "$CONFIG_DIR/$CONFIG_FILE" "$section" | while read -r key; do
        value=$(ini_read "$CONFIG_DIR/$CONFIG_FILE" "$section" "$key")
        echo "  - ${brightyellow} $key ${brightred} = ${brightwhite} $value ${reset}"
-
-
+	   done
 
 
 # Display Output #
