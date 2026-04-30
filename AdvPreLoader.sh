@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # BLING PreLoader Utility
 #
 # TODO: Add to BLING
@@ -22,8 +23,8 @@ FUNC_FILE="lib_ini.bfunc"
 COLORS_FILE="AdvPreLoader_Colors.conf"
 
 # Source our Color Config
-if [ -f $CONFIG_DIR/$COLORS_FILE ]; then
-        source $CONFIG_DIR/$COLORS_FILE
+if [ -f "$CONFIG_DIR/$COLORS_FILE" ]; then
+        source "$CONFIG_DIR/$COLORS_FILE"
 fi
 
 ####################################################################################################################################
