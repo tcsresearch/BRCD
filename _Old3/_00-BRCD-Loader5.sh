@@ -21,7 +21,7 @@ RunPS1ConfigTool="0"
 ####################################################################################################
 
 # ----- Folder Paths ----- #
-BRCDPath="/etc/bashrc.d"
+BRCDPath="/etc/bashrc.d/functions"
 CechoPath="/etc/BLING/functions"
 
 # ----- File Names ----- #
@@ -38,9 +38,9 @@ function LoadCecho() {
 ## TODO: Switch to new function in BLING with Cecho Sanity Checker and Cecho_Alias.
 	if [ ! -f "$CechoPath/$Cecho_FileName" ]; then
 	  echo "ERROR: $CechoPath/$Cecho_FileName Not Found!"
-	  return
+	  break
   	else
-	  source "$CechoPath/$Cecho_FileName"
+	  source $CechoPath/$Cecho_FileName
 	  cecho blue "Cecho Enabled."
 	  alias echo="cecho" # Make 'echo' use 'cecho'
 	fi
@@ -52,8 +52,8 @@ function LoadCecho() {
 function DefineFileArray() {
 # Define an array of files to check
 ## TODO: Populate array based on a config file: PS1ConfigTool.conf.
-	Files_to_check=(
-		"FilePath/01_bash-aliases.brcd"
+	Files_To_Check=(
+		"$BRCDPath/01_bash-aliases.brcd"
     		# "$BRCDPath/05_New-Custom-bash-prompt4.brcd"
     		"$BRCDPath/10_cecho.brcd"
     		# $BRCDPath/PS1ConfigTool/functions/PS1ConfigTool.bfunc"
@@ -67,7 +67,7 @@ function DefineFileArray() {
 
 function LoadFileArray() {
 # Loop through each file in the array
-for file in "${files_to_check[@]}"; do
+for file in "${Files_To_Check[@]}"; do
     # Check if the file exists and is a regular file
     if [ -f "$file" ]; then
        cecho "Sourcing File: $file"
@@ -77,6 +77,17 @@ for file in "${files_to_check[@]}"; do
        cecho "ERROR: File does NOT exist: $file"
     fi
 done
+}
+
+##### ----- Test Fix: 04/29/2026 ----- #####
+function TestFix1() {
+	for script in "etc/bashrc.d/functions/*.bfunc"
+	do
+	    if [ -r "$script" ]
+	    then
+	        . "$script"
+	    fi
+	done
 }
 
 
@@ -98,23 +109,25 @@ function DisableExportHack() {
 # ----- Manual Source ----- #
 
 function ManualSource() {
-	source "./01_bash-aliases.brcd"
+	cd $BRCDPath
+	source ./01_bash-aliases.brcd
 
 	# source ./05_New-Custom-bash-prompt4.brcd
 
-	source "./10_cecho.brcd"
+	source ./10_cecho.brcd
 
 	# PS1ConfigTool Not Finished Yet - Workaround
 #	source ./PS1ConfigTool/functions/PS1ConfigTool.bfunc
 #	PS1Select_OldDefault
 
-	source "./20_BLING_Loader.brcd"
+	source ./20_BLING_Loader.brcd
 
 	# source ./80_powerline.brcd.sh
 
-	source "./90_fastfetch.brcd"
+	source ./90_fastfetch.brcd
 
-	source "./97_tmux.brcd"
+	source ./97_tmux.brcd
+	cd -
 }
 
 
@@ -123,8 +136,14 @@ function ManualSource() {
 function PerformPromptChange() {
 # Change BASH Prompt via PS1ConfigTool
 # TODO: Enable Profile Selection Via CASE Statement.
+	echo "Starting PS1ConfigTool..."
+	cd /etc/PS1ConfigTool
+	echo "Running PS1Select AdvPreLoader.sh..."
+	sh AdvPreLoader.sh
+	source profiles/OldDefault.bprofile
 	echo "Changing BASH Prompt..."
 	PS1Select_OldDefault
+	cd -
 }
 
 
@@ -138,16 +157,24 @@ alias echo="echo"
 
 LoadCecho
 EnableExportHack
-DefineFileArray
-LoadFileArray
-# PerformPromptChange
+
+# BLINGLoader_Aliases
+
+# ManualSource
+
+# Dynamic Duo #
+ DefineFileArray
+ LoadFileArray
+
+#  TestFix1
+
+PerformPromptChange
 DisableExportHack
 
 
 ## Loader Fix ##
-cd /etc/bashrc.d || return 1
-sh AdvPreLoader.sh 
-cd ... || return
-
+cd /etc/bashrc.d
+sh AdvPreLoader.sh
+cd -
 
 

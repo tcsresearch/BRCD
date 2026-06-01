@@ -1,4 +1,4 @@
-#!/bin/bash
+
 # Define Location of Cecho
 Location_Cecho="/etc/BLING/NewCecho.bfunc"
 

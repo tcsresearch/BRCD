@@ -13,3 +13,7 @@ if [ -d "$BLING_Libs_Folder" ]; then
 else
   echo "Folder does not exist: $BLING_Libs_Folder"
 fi
+
+echo "BLING Libraries Loaded Successfully."
+echo " "
+

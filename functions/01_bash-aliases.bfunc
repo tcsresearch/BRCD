@@ -1,41 +1,34 @@
-#!/bin/bash
-# 
-# Last Updated: Fri May 01,2026
+# Last Updated: Sat Nov 15,2025
 #
+function BLINGLoader_Aliases() {
 ## BEGIN Custom Aliases - Base ##
-alias ll='ls -hl --color=auto'
-alias rm='rm -i'
-alias mv='mv -v'
-alias cp='cp -v'
-#
+	alias ll="ls -hl --color=auto"
+	alias rm="rm -i"
+	alias mv="mv -v"
+	alias cp="cp -v"
+
 # DOS-Like commands
-alias md='mkdir'
-alias rd='rmdir'
-#
+	alias md="mkdir"
+	alias rd="rmdir"
+
 # Systemctl Aliases
-alias sc='systemctl'
-alias scs='systemctl status'
-alias scstart='systemctl start'
-alias scstop='systemctl stop'
-#
+	alias sc='systemctl'
+	alias scs='systemctl status'
+	alias scstart='systemctl start'
+	alias scstop='systemctl stop'
+
 # Interactive
-alias rmi='rm -i'
-alias cpi='cp -i'
-alias mvi='mv -i'
-#
-# Archive extraction
-alias untar='tar -xvf'
-alias ungz='tar -xzvf'
-alias unbz2='tar -xjvf'
-#
-# Disk usage
-alias biggest='du -h --max-depth=1 | sort -h'
-#
-# Time 
-alias now='date +"%d-%m-%Y %I:%M %p"'
-alias today='date +"%Y%m%d"'
-#
+	alias rmi='rm -i'
+	alias cpi='cp -i'
+	alias mvi='mv -i'
+
 # Other
-alias sensors='sensors -f'
-#
+	alias sensors='sensors -f'
+
 ## END Custom Aliases ##
+}
+
+## Run Function ##
+echo "Running Function: BLINGLoader_Aliases..."
+BLINGLoader_Aliases
+

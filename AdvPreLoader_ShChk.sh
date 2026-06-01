@@ -1,6 +1,13 @@
-#!/usr/bin/env bash
-
+#!/bin/bash
 # BLING PreLoader Utility
+# Version: 26.05.31
+
+# ShellCheck: Suppress SC1090
+# shellcheck source=/dev/null
+
+# ShellCheck: Disable SC2154
+# shellcheck disable=SC2154  # Unused variables left for readability
+#
 #
 # TODO: Add to BLING
 # 	Enable Cecho
@@ -9,22 +16,29 @@
 # Define Files and Folders.																										   #
 ####################################################################################################################################
 
+# Define Config Directory
+  CONFIG_DIR="$(pwd)/config"
+  export CONFIG_DIR
 
-CONFIG_DIR="$(pwd)/config"
-
+# Define Config File  
 # CONFIG_FILE="test.ini"
 # CONFIG_FILE="config.ini"
   CONFIG_FILE="BRCD_Loader.conf"
+  export CONFIG_FILE
 
-FUNC_DIR="$(pwd)/functions"
-FUNC_FILE="lib_ini.bfunc"
+# Define Functions Directory
+  FUNC_DIR="$(pwd)/functions"
+  FUNC_FILE="lib_ini.bfunc"
+  export FUNC_DIR
+  export FUNC_FILE
 
 # Colors for Cecho-like output
-COLORS_FILE="AdvPreLoader_Colors.conf"
+  COLORS_FILE="Colors.conf"
+  export COLORS_FILE
 
 # Source our Color Config
-if [ -f "$CONFIG_DIR/$COLORS_FILE" ]; then
-        source "$CONFIG_DIR/$COLORS_FILE"
+if [ -f "$CONFIG_DIR"/$COLORS_FILE ]; then
+        source "$CONFIG_DIR"/$COLORS_FILE
 fi
 
 ####################################################################################################################################
@@ -54,15 +68,16 @@ source_files_if_exist() {
     local dir="$1"
     local pattern="$2"
     if [[ -d "$dir" ]]; then
-        echo "${brightwhite} Sourcing files from: ${brightyellow} $dir ${reset}"
+         echo "${brightwhite} Sourcing files from: ${brightyellow} $dir ${reset}"
 	echo "-------------------------------------------------------------------------------------------"
 	# Use a glob to find matching files and loop through them
         for file in "$dir"/$pattern; do
             # Check if the glob found actual files (and not just the literal pattern if no files match)
             if [[ -f "$file" ]]; then
-                echo "  ${brightyellow} Sourcing: ${brightblue} $file"
-                source "$file"
-            fi
+                 echo "  ${brightyellow} Sourcing: ${brightblue} $file"
+                ### Try using . instead of source source "$file"
+            	. "$file"
+	    fi
         done
     else
         echo "Directory not found: $dir"

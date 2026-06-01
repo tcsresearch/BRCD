@@ -1,9 +1,9 @@
 #!/bin/bash
 
-BLING_Libs_Folder="/etc/BLING/functions"
+BLING_Libs_Folder="/etc/BLING"
 
 if [ -d "$BLING_Libs_Folder" ]; then
-	echo "Processing BLING Library File: "
+	cecho blue "Processing BLING Library File: "
   # Folder exists, start the for loop
   for BLING_LibraryFile in "$BLING_Libs_Folder"/*.bfunc; do
     # cecho blue "Processing BLING Library: "
@@ -11,5 +11,5 @@ if [ -d "$BLING_Libs_Folder" ]; then
     source $BLING_LibraryFile
   done
 else
-  echo "Folder does not exist: $BLING_Libs_Folder"
+  cecho red "Folder does not exist: $BLING_Libs_Folder"
 fi
