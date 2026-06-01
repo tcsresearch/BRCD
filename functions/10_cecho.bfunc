@@ -4,7 +4,9 @@ Location_Cecho="/etc/BLING/Cecho.bfunc"
 
 # Load function if it exists
 # TODO: Show error if not found.
-if [ -f $Location_Cecho ]; then
-    . $Location_Cecho
+if [ -f "$Location_Cecho" ]; then
+    . "$Location_Cecho"
+else
+    echo "ERROR! Cecho Function Library $Location_Cecho NOT Found."
 fi
 
