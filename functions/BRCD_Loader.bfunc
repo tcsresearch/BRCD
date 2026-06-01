@@ -1,14 +1,12 @@
-
 # Functions file - based on BRCD-Loader v6
 
-### NOTE: As of BRCD-Loader v5, PS1ConfigTool is now a seperate program to be called by BRCD-Loader via AdvPreLoader.sh.
+### NOTE: As of BRCD-Loader v5, PS1ConfigTool is now a separate program to be called by BRCD-Loader via AdvPreLoader.sh.
 
 ## --- TODO For v6 --- ##
 # - Enable Cecho [ TESTABLE ]
 # - Setup Colorized Status Messages via ColorStatus. [ Needs Development ]
 # - Use Correct PreLoader
 # - Use EchoCmd.conf to control output
-
 
 
 ####################################################################################################
@@ -21,11 +19,11 @@ function LoadCecho() {
 # Load Cecho w/ Sanity Check
 ## TODO: Switch to new function in BLING with Cecho Sanity Checker and Cecho_Alias.
 	if [ ! -f "$BLINGPath/$Cecho_FileName" ]; then
-	  echo "ERROR: $BLINGPath/$Cecho_FileName Not Found!"
+	  cecho red "ERROR: $BLINGPath/$Cecho_FileName Not Found!"
 	  break
   	else
 	  source "$BLINGPath"/"$Cecho_FileName"
-	  echo "Cecho Enabled."
+	  cecho blue "Cecho Enabled."
 	  alias echo="cecho" # Make 'echo' use 'cecho'
 	fi
 }
@@ -39,13 +37,13 @@ function DefineFileArray() {
 ## TODO: Populate array based on a config file: PS1ConfigTool.conf.
 	Files_to_check=(
 		"FilePath/01_bash-aliases.brcd"
-    		# "$BRCDPath/05_New-Custom-bash-prompt4.brcd"
-    		"$BRCDPath/10_cecho.brcd"
-    		# $BRCDPath/PS1ConfigTool/functions/PS1ConfigTool.bfunc"
-    		"$BRCDPath/20_BLING_Loader.brcd"
-    		"$BRCDPath/80_powerline.brcd"
-    	        "$BRCDPath/90_fastfetch.brcd"
-    		"$BRCDPath/97_tmux.brcd"
+    	# "$BRCDPath/05_New-Custom-bash-prompt4.brcd"
+    	"$BRCDPath/10_cecho.brcd"
+    	# $BRCDPath/PS1ConfigTool/functions/PS1ConfigTool.bfunc"
+    	"$BRCDPath/20_BLING_Loader.brcd"
+    	"$BRCDPath/80_powerline.brcd"
+    	"$BRCDPath/90_fastfetch.brcd"
+    	"$BRCDPath/97_tmux.brcd"
 	) # Close Array.
 }
 
@@ -57,7 +55,7 @@ function LoadFileArray() {
 for file in "${files_to_check[@]}"; do
     # Check if the file exists and is a regular file
     if [ -f "$file" ]; then
-      ##  cecho blue "Sourcing File: $file"
+       cecho blue "Sourcing File: $file"
        # Optional: Source the file if it's a configuration or script
        source "$file"
     else
@@ -65,6 +63,7 @@ for file in "${files_to_check[@]}"; do
     fi
 done
 }
+
 
 
 

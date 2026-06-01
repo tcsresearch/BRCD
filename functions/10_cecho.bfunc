@@ -1,9 +1,12 @@
 #!/bin/bash
 # Define Location of Cecho
-Location_Cecho="/etc/BLING/NewCecho.bfunc"
+Location_Cecho="/etc/BLING/Cecho.bfunc"
 
 # Load function if it exists
-if [ -f $Location_Cecho ]; then
-    . $Location_Cecho
+# TODO: Show error if not found.
+if [ -f "$Location_Cecho" ]; then
+    . "$Location_Cecho"
+else
+    echo "ERROR! Cecho Function Library $Location_Cecho NOT Found."
 fi
 
