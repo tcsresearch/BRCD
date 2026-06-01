@@ -4,3 +4,9 @@
 
 This is the latest major code revision, with the code split into functions and is PreLoader enabled.
 As of Jan 11, 2026, this code has been tested on Fedora and appears to be working properly (via _00-BRCD-Loader5.sh).
+
+<p>
+  :white_check_mark: This code was verified as ShellCheck compliant as of 05/31/2026. <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Code added after this date may or may not remain in compliance.
+</p>
+<hr>
