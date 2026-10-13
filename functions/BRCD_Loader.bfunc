@@ -36,9 +36,9 @@ function DefineFileArray() {
 ### TODO v6: Change to work with PreLoader and correct filenames inside functions folder.
 ## TODO: Populate array based on a config file: PS1ConfigTool.conf.
 	Files_To_Check=(
-		"FilePath/01_bash-aliases.brcd"
+		"BRCDPath/01_bash-aliases.brcd"
     	# "$BRCDPath/05_New-Custom-bash-prompt4.brcd"
-    	"$BRCDPath/10_cecho.brcd"
+    	"BRCDPath/10_cecho.brcd"
     	# $BRCDPath/PS1ConfigTool/functions/PS1ConfigTool.bfunc"
     	"$BRCDPath/20_BLING_Loader.brcd"
     	"$BRCDPath/80_powerline.brcd"
