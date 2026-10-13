@@ -20,7 +20,7 @@ function LoadCecho() {
 ## TODO: Switch to new function in BLING with Cecho Sanity Checker and Cecho_Alias.
 	if [ ! -f "$BLINGPath/$Cecho_FileName" ]; then
 	  cecho red "ERROR: $BLINGPath/$Cecho_FileName Not Found!"
-	  break
+	  return
   	else
 	  source "$BLINGPath"/"$Cecho_FileName"
 	  cecho blue "Cecho Enabled."
