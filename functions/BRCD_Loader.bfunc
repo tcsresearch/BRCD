@@ -35,7 +35,7 @@ function DefineFileArray() {
 # Define an array of files to check
 ### TODO v6: Change to work with PreLoader and correct filenames inside functions folder.
 ## TODO: Populate array based on a config file: PS1ConfigTool.conf.
-	Files_to_check=(
+	Files_To_Check=(
 		"FilePath/01_bash-aliases.brcd"
     	# "$BRCDPath/05_New-Custom-bash-prompt4.brcd"
     	"$BRCDPath/10_cecho.brcd"
@@ -52,7 +52,7 @@ function LoadFileArray() {
 ## TODO: Move code to BLING and call from there.
 
 # Loop through each file in the array
-for file in "${files_to_check[@]}"; do
+for file in "${Files_To_Check[@]}"; do
     # Check if the file exists and is a regular file
     if [ -f "$file" ]; then
        cecho blue "Sourcing File: $file"
