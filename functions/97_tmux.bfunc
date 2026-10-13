@@ -1,5 +1,5 @@
-#!/bin/bash
-if [ -f `which tmux` ]; then
+#!/bin/env bash
+if [ -f $(which tmux) ]; then
   tmux
 fi
 
